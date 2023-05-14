@@ -26,7 +26,7 @@ export const Drawer = ({ children, entryDrawer, id }: DrawerProps) => {
       className={classnames(
         'react-drawers_drawer',
         drawerClassName,
-        { in: activeDrawersIds.includes(id) },
+        { in: entryDrawer || activeDrawersIds.includes(id) },
         { out: !activeDrawersIds.includes(id) },
         { active: activeDrawersIds.slice(-1)[0] === id }, // quella attuale
         { 'child-active': activeDrawersIds.slice(0, -1).includes(id) }, // quelle aperte ma coperte dall'attuale
