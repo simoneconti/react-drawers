@@ -10,24 +10,27 @@ export interface DrawerProps {
 }
 
 export const Drawer = ({ children, entryDrawer, id }: DrawerProps) => {
-  const { activeDrawersId, addActiveDrawerId, drawerClassName } = useDrawersContext();
+  const { activeDrawersIds, addActiveDrawerId, drawerClassName, removeDrawerId } = useDrawersContext();
 
   React.useEffect(() => {
     if (entryDrawer) {
       addActiveDrawerId(id);
     }
-  }, [addActiveDrawerId, entryDrawer, id]);
+    return () => {
+      removeDrawerId(id);
+    };
+  }, [addActiveDrawerId, entryDrawer, id, removeDrawerId]);
 
   return (
     <div
       className={classnames(
         'react-drawers_drawer',
         drawerClassName,
-        { in: activeDrawersId.includes(id) },
-        { out: !activeDrawersId.includes(id) },
-        { active: activeDrawersId.slice(-1)[0] === id }, // quella attuale
-        { 'child-active': activeDrawersId.slice(0, -1).includes(id) }, // quelle aperte ma coperte dall'attuale
-        { 'direct-child-active': activeDrawersId.slice(-2, -1)[0] === id } // quella prima dell'attuale
+        { in: activeDrawersIds.includes(id) },
+        { out: !activeDrawersIds.includes(id) },
+        { active: activeDrawersIds.slice(-1)[0] === id }, // quella attuale
+        { 'child-active': activeDrawersIds.slice(0, -1).includes(id) } // quelle aperte ma coperte dall'attuale
+        // { 'direct-child-active': activeDrawersIds.slice(-2, -1)[0] === id } // quella prima dell'attuale
       )}
     >
       <div className="react-drawers_drawer-content">{children}</div>

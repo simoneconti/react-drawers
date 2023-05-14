@@ -19,11 +19,12 @@ const createContext = <T extends unknown | null>(displayName: string) => {
 };
 
 export interface DrawersContextInterface {
-  activeDrawersId: Array<string>;
+  activeDrawersIds: Array<string>;
   addActiveDrawerId(id: string): void;
   closeActiveDrawer(): void;
   drawerClassName?: string;
   itemsClassName?: string;
+  removeDrawerId(id: string): void;
 }
 
 export const [DrawersContext, useDrawersContext] = createContext<DrawersContextInterface>('DrawersContext');

@@ -15,22 +15,27 @@ export interface DrawersProps {
 }
 
 export const Drawers = ({ children, className, drawerClassName, itemsClassName }: DrawersProps) => {
-  const [activeDrawersId, setActiveDrawersId] = React.useState<Array<string>>([]);
+  const [activeDrawersIds, setActiveDrawersIds] = React.useState<Array<string>>([]);
 
   const addActiveDrawerId = React.useCallback((drawerId: string) => {
-    setActiveDrawersId((prevState) => [...prevState, drawerId]);
+    setActiveDrawersIds((prevState) => [...prevState, drawerId]);
+  }, []);
+
+  const removeDrawerId = React.useCallback((drawerId: string) => {
+    setActiveDrawersIds((prevState) => prevState.filter((id) => id !== drawerId));
   }, []);
 
   const closeActiveDrawer = React.useCallback(() => {
-    setActiveDrawersId((prevState) => prevState.slice(0, -1));
+    setActiveDrawersIds((prevState) => prevState.slice(0, -1));
   }, []);
 
   const drawersContext: DrawersContextInterface = {
-    activeDrawersId,
+    activeDrawersIds,
     addActiveDrawerId,
     closeActiveDrawer,
     drawerClassName,
     itemsClassName,
+    removeDrawerId,
   };
 
   const entryDrawerId = React.useMemo(() => createUUID(), []);

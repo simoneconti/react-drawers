@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Drawer } from './Drawer';
-import { DrawerButtonItem } from './DrawerButtonItem';
 import { useDrawersContext } from './DrawersContext';
 import { createUUID } from './util';
 
@@ -21,7 +20,9 @@ export const DrawerTriggerItem = ({ children, newDrawer }: DrawerTriggerItemProp
 
   return (
     <>
-      <DrawerButtonItem onClick={handleClick}>{children}</DrawerButtonItem>
+      <div onClick={handleClick} onKeyDown={handleClick} role="button" tabIndex={0}>
+        {children}
+      </div>
       <Drawer id={id}>{newDrawer}</Drawer>
     </>
   );
