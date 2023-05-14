@@ -1,4 +1,4 @@
-import { Drawers } from './Drawers';
+import Drawers from './Drawers';
 
 const App = () => {
   return <Drawers />;

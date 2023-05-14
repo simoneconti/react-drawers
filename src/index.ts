@@ -1,3 +1,3 @@
-import { Drawers } from './Drawers';
+import { default as Drawers } from './Drawers';
 
 export { Drawers };
