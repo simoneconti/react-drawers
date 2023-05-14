@@ -1,3 +1,1 @@
-import { default as Drawers } from './Drawers';
-
-export { Drawers };
+export * from './Drawers';
