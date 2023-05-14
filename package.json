@@ -13,8 +13,14 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/@simoneconti/react-drawers.js",
-      "require": "./dist/@simoneconti/react-drawers.umd.cjs"
+      "import": {
+        "default": "./dist/@simoneconti/react-drawers.js",
+        "types": "./dist/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/@simoneconti/react-drawers.umd.cjs",
+        "types": "./dist/index.d.ts"
+      }
     }
   },
   "main": "./dist/@simoneconti/react-drawers.umd.cjs",
