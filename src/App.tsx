@@ -25,16 +25,16 @@ const X = ({ index }: { index: number }) => (
           </DrawerBackItem>
         )}
         <DrawerTriggerItem newDrawer={<X index={index + 1} />}>
-          <DrawerItem height={50} justifyContent="start" start={{ center: `Livello ${index}` }} />
+          <DrawerItem justifyContent="start" start={{ center: `Livello ${index}` }} />
         </DrawerTriggerItem>
         <DrawerTriggerItem newDrawer={<X index={index + 1} />}>
-          <DrawerItem height={50} justifyContent="start" start={{ center: `Livello ${index}` }} />
+          <DrawerItem justifyContent="start" start={{ center: `Livello ${index}` }} />
         </DrawerTriggerItem>
         <DrawerTriggerItem newDrawer={<X index={index + 1} />}>
-          <DrawerItem height={50} justifyContent="start" start={{ center: `Livello ${index}` }} />
+          <DrawerItem justifyContent="start" start={{ center: `Livello ${index}` }} />
         </DrawerTriggerItem>
         <DrawerTriggerItem newDrawer={<X index={index + 1} />}>
-          <DrawerItem height={50} justifyContent="start" start={{ center: `Livello ${index}` }} />
+          <DrawerItem justifyContent="start" start={{ center: `Livello ${index}` }} />
         </DrawerTriggerItem>
       </>
     ) : (
@@ -42,7 +42,7 @@ const X = ({ index }: { index: number }) => (
         <DrawerBackItem>
           <DrawerItem height={30} justifyContent="start" start={{ center: 'back' }} />
         </DrawerBackItem>
-        <DrawerItem height={50} justifyContent="start" start={{ center: `Livello ${index}` }} />
+        <DrawerItem justifyContent="start" start={{ center: `Livello ${index}` }} />
       </>
     )}
   </>

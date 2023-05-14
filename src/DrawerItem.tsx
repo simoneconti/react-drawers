@@ -14,7 +14,7 @@ export interface DrawerItemProps {
     center?: string | React.ReactElement;
     top?: string | React.ReactElement;
   };
-  height: number;
+  height?: number;
   justifyContent: 'center' | 'start' | 'end' | 'space-between' | 'space-around' | 'space-evenly';
   start?: {
     bottom?: string | React.ReactElement;
@@ -30,8 +30,8 @@ export const DrawerItem = ({ center, className, end, height, justifyContent, sta
     <div
       className={classnames('react-drawers_drawer-item', drawerItemClassName, className)}
       style={{
-        alignItems: 'center',
-        display: 'flex',
+        // alignItems: 'center',
+        // display: 'flex',
         justifyContent: justifyContent,
         minHeight: height,
         ...drawerItemStyle,

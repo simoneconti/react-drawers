@@ -1,4 +1,7 @@
 $drawer-background: white !default;
+$drawer-item-height: 50px;
+$transition-duration: 200ms;
+$horizontal-offset: 2%;
 
 .react-drawers_drawers {
   position: absolute;
@@ -17,8 +20,13 @@ $drawer-background: white !default;
     > .react-drawers_drawer-content {
       height: 100%;
       overflow: auto;
+      .react-drawers_drawer-item {
+        display: flex;
+        align-items: center;
+        min-height: $drawer-item-height;
+      }
     }
-    transition: transform 200ms;
+    transition: transform $transition-duration;
     &.out {
       transform: translateX(100%);
     }
@@ -26,12 +34,12 @@ $drawer-background: white !default;
       transform: translateX(0%);
     }
     &.direct-child-active {
-      transform: translateX(-10%);
+      transform: translateX(-$horizontal-offset);
       .in {
-        transform: translateX(10%);
+        transform: translateX($horizontal-offset);
       }
       .out {
-        transform: translateX(110%);
+        transform: translateX(100% + $horizontal-offset);
       }
     }
   }
