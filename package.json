@@ -19,6 +19,7 @@
   },
   "main": "./dist/@simoneconti/react-drawers.umd.cjs",
   "module": "./dist/@simoneconti/react-drawers.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -47,6 +48,7 @@
     "@vitejs/plugin-react": "^4.0.0",
     "sass": "^1.62.1",
     "typescript": "^5.0.2",
-    "vite": "^4.3.2"
+    "vite": "^4.3.2",
+    "vite-plugin-dts": "^2.3.0"
   }
 }
