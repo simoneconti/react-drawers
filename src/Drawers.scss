@@ -1,7 +1,7 @@
 $drawer-background: white !default;
-$drawer-item-height: 50px;
-$transition-duration: 200ms;
-$horizontal-offset: 2%;
+$drawer-item-height: 50px !default;
+$transition-duration: 200ms !default;
+$horizontal-offset: 10% !default;
 
 .react-drawers_drawers {
   position: absolute;
