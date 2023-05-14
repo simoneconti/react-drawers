@@ -14,12 +14,12 @@
   "exports": {
     ".": {
       "import": {
-        "default": "./dist/@simoneconti/react-drawers.js",
-        "types": "./dist/index.d.ts"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/@simoneconti/react-drawers.js"
       },
       "require": {
-        "default": "./dist/@simoneconti/react-drawers.umd.cjs",
-        "types": "./dist/index.d.ts"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/@simoneconti/react-drawers.umd.cjs"
       }
     }
   },
