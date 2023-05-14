@@ -1,18 +1,27 @@
 {
   "name": "@simoneconti/react-drawers",
   "version": "0.0.0",
+  "homepage": "https://github.com/simoneconti/react-drawers#readme",
+  "bugs": {
+    "url": "https://github.com/simoneconti/react-drawers/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simoneconti/react-drawers.git"
+  },
+  "author": "Simone Conti",
   "type": "module",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/@simoneconti/react-drawers.umd.cjs",
-  "module": "./dist/@simoneconti/react-drawers.js",
   "exports": {
     ".": {
       "import": "./dist/@simoneconti/react-drawers.js",
       "require": "./dist/@simoneconti/react-drawers.umd.cjs"
     }
   },
+  "main": "./dist/@simoneconti/react-drawers.umd.cjs",
+  "module": "./dist/@simoneconti/react-drawers.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc && vite build",
     "clean": "npx --ignore-existing --quiet rimraf package-lock.json node_modules",
@@ -22,6 +31,9 @@
     "sort": "npx sort-package-json"
   },
   "prettier": "@simoneconti/prettier-config",
+  "eslintConfig": {
+    "extends": "@simoneconti/eslint-config"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -36,8 +48,5 @@
     "sass": "^1.62.1",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
-  },
-  "eslintConfig": {
-    "extends": "@simoneconti/eslint-config"
   }
 }
