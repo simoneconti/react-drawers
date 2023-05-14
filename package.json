@@ -23,7 +23,7 @@
       }
     },
     "./dist/style.css": "./dist/style.css",
-    "./dist/scss/Drawers.css": "./dist/Drawers.scss"
+    "./dist/scss/Drawers.scss": "./dist/scss/Drawers.scss"
   },
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
