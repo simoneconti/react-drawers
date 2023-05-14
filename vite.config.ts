@@ -14,7 +14,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'React Drawers',
       // the proper extensions will be added
-      fileName: '@simoneconti/react-drawers',
+      fileName: 'index',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

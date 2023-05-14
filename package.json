@@ -15,16 +15,16 @@
     ".": {
       "import": {
         "types": "./dist/index.d.ts",
-        "default": "./dist/@simoneconti/react-drawers.js"
+        "default": "./dist/index.js"
       },
       "require": {
         "types": "./dist/index.d.ts",
-        "default": "./dist/@simoneconti/react-drawers.umd.cjs"
+        "default": "./dist/index.umd.cjs"
       }
     }
   },
-  "main": "./dist/@simoneconti/react-drawers.umd.cjs",
-  "module": "./dist/@simoneconti/react-drawers.js",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
