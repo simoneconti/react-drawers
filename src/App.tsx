@@ -1,5 +1,7 @@
+import { Drawers } from './Drawers';
+
 const App = () => {
-  return <>ciao</>;
+  return <Drawers />;
 };
 
 // eslint-disable-next-line no-restricted-syntax

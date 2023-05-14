@@ -1,8 +1,18 @@
 {
   "name": "@simoneconti/react-drawers",
   "version": "0.0.0",
-  "private": true,
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/@simoneconti/react-drawers.umd.cjs",
+  "module": "./dist/@simoneconti/react-drawers.js",
+  "exports": {
+    ".": {
+      "import": "./dist/@simoneconti/react-drawers.js",
+      "require": "./dist/@simoneconti/react-drawers.umd.cjs"
+    }
+  },
   "scripts": {
     "build": "tsc && vite build",
     "clean": "npx --ignore-existing --quiet rimraf package-lock.json node_modules",
@@ -19,6 +29,7 @@
   "devDependencies": {
     "@simoneconti/eslint-config": "^1.0.4",
     "@simoneconti/prettier-config": "^1.0.5",
+    "@types/node": "^20.1.4",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
