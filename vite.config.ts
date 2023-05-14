@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -31,5 +32,11 @@ export default defineConfig({
       },
     },
   },
-  plugins: [react(), dts({ insertTypesEntry: true })],
+  plugins: [
+    react(),
+    dts({ insertTypesEntry: true }),
+    viteStaticCopy({
+      targets: [{ src: 'src/Drawers.scss', dest: 'scss' }],
+    }),
+  ],
 });

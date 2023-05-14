@@ -22,7 +22,8 @@
         "default": "./dist/index.umd.cjs"
       }
     },
-    "./dist/style.css": "./dist/style.css"
+    "./dist/style.css": "./dist/style.css",
+    "./dist/scss/Drawers.css": "./dist/Drawers.scss"
   },
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
@@ -63,6 +64,7 @@
     "sass": "^1.62.1",
     "typescript": "^5.0.2",
     "vite": "^4.3.2",
-    "vite-plugin-dts": "^2.3.0"
+    "vite-plugin-dts": "^2.3.0",
+    "vite-plugin-static-copy": "^0.15.0"
   }
 }
