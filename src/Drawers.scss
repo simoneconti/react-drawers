@@ -1,7 +1,36 @@
 .react-drawers_drawers {
-  padding: 1rem;
-  background-color: red;
-  color: white;
-  opacity: 0.5;
-  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  .react-drawers_drawer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: white;
+    > .react-drawers_drawer-content {
+      height: 100%;
+      overflow: auto;
+    }
+    transition: transform 200ms;
+    &.out {
+      transform: translateX(100%);
+    }
+    &.in {
+      transform: translateX(0%);
+    }
+    &.direct-child-active {
+      transform: translateX(-10%);
+      .in {
+        transform: translateX(10%);
+      }
+      .out {
+        transform: translateX(110%);
+      }
+    }
+  }
 }
