@@ -15,7 +15,7 @@ export interface DrawerItemProps {
     top?: string | React.ReactElement;
   };
   height: number;
-  justifyContent: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
+  justifyContent: 'center' | 'start' | 'end' | 'space-between' | 'space-around' | 'space-evenly';
   start?: {
     bottom?: string | React.ReactElement;
     center?: string | React.ReactElement;
@@ -24,34 +24,35 @@ export interface DrawerItemProps {
 }
 
 export const DrawerItem = ({ center, className, end, height, justifyContent, start }: DrawerItemProps) => {
-  const { itemsClassName } = useDrawersContext();
+  const { drawerItemClassName, drawerItemStyle } = useDrawersContext();
 
   return (
     <div
-      className={classnames(
-        itemsClassName,
-        className,
-        'd-flex align-items-center',
-        `justify-content-${justifyContent}`
-      )}
-      style={{ minHeight: height }}
+      className={classnames('react-drawers_drawer-item', drawerItemClassName, className)}
+      style={{
+        alignItems: 'center',
+        display: 'flex',
+        justifyContent: justifyContent,
+        minHeight: height,
+        ...drawerItemStyle,
+      }}
     >
       {start && (
-        <div className="d-flex flex-column align-items-start text-start">
+        <div style={{ alignItems: 'start', display: 'flex', flexDirection: 'column', textAlign: 'start' }}>
           {start.top && start.top}
           {start.center && start.center}
           {start.bottom && start.bottom}
         </div>
       )}
       {center && (
-        <div className="d-flex flex-column align-items-center text-center">
+        <div style={{ alignItems: 'center', display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
           {center.top && center.top}
           {center.center && center.center}
           {center.bottom && center.bottom}
         </div>
       )}
       {end && (
-        <div className="d-flex flex-column align-items-end text-end">
+        <div style={{ alignItems: 'end', display: 'flex', flexDirection: 'column', textAlign: 'end' }}>
           {end.top && end.top}
           {end.center && end.center}
           {end.bottom && end.bottom}

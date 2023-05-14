@@ -23,7 +23,7 @@
     &.in {
       transform: translateX(0%);
     }
-    &.child-active {
+    &.direct-child-active {
       transform: translateX(-10%);
       .in {
         transform: translateX(10%);

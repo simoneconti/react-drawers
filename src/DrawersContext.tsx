@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
 const createContext = <T extends unknown | null>(displayName: string) => {
   const Context = React.createContext<T | undefined>(undefined);
@@ -23,7 +23,9 @@ export interface DrawersContextInterface {
   addActiveDrawerId(id: string): void;
   closeActiveDrawer(): void;
   drawerClassName?: string;
-  itemsClassName?: string;
+  drawerItemClassName?: string;
+  drawerItemStyle?: CSSProperties;
+  drawerStyle?: CSSProperties;
   removeDrawerId(id: string): void;
 }
 

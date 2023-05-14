@@ -1,7 +1,7 @@
 import './Drawers.scss';
 
 import classnames from 'classnames';
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
 import { Drawer } from './Drawer';
 import { DrawersContext, DrawersContextInterface } from './DrawersContext';
@@ -11,10 +11,19 @@ export interface DrawersProps {
   children: React.ReactNode | ((context: DrawersContextInterface) => React.ReactNode);
   className?: string;
   drawerClassName?: string;
-  itemsClassName?: string;
+  drawerItemClassName?: string;
+  drawerItemStyle?: CSSProperties;
+  drawerStyle?: CSSProperties;
 }
 
-export const Drawers = ({ children, className, drawerClassName, itemsClassName }: DrawersProps) => {
+export const Drawers = ({
+  children,
+  className,
+  drawerClassName,
+  drawerItemClassName,
+  drawerItemStyle,
+  drawerStyle,
+}: DrawersProps) => {
   const [activeDrawersIds, setActiveDrawersIds] = React.useState<Array<string>>([]);
 
   const addActiveDrawerId = React.useCallback((drawerId: string) => {
@@ -34,7 +43,9 @@ export const Drawers = ({ children, className, drawerClassName, itemsClassName }
     addActiveDrawerId,
     closeActiveDrawer,
     drawerClassName,
-    itemsClassName,
+    drawerItemClassName,
+    drawerItemStyle,
+    drawerStyle,
     removeDrawerId,
   };
 
