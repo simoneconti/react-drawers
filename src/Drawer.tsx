@@ -29,6 +29,7 @@ export const Drawer = ({ children, entryDrawer, id }: DrawerProps) => {
         { in: entryDrawer || activeDrawersIds.includes(id) },
         { out: !activeDrawersIds.includes(id) },
         { active: activeDrawersIds.slice(-1)[0] === id }, // quella attuale
+        { next: false }, // Quelle subito dopo l'attuale
         { 'child-active': activeDrawersIds.slice(0, -1).includes(id) }, // quelle aperte ma coperte dall'attuale
         { 'direct-child-active': activeDrawersIds.slice(-2, -1)[0] === id } // quella prima dell'attuale
       )}

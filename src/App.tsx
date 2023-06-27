@@ -7,7 +7,7 @@ import { DrawerTriggerItem } from './DrawerTriggerItem';
 
 export const App = () => {
   return (
-    <div style={{ backgroundColor: 'white', height: '100%', margin: 'auto', position: 'relative', width: 500 }}>
+    <div style={{ backgroundColor: 'white', height: '100vh', margin: 'auto', position: 'relative', width: 500 }}>
       <Drawers drawerItemStyle={{ borderBottom: 'solid 1px #ccc', padding: 5 }}>
         <X index={0} />
       </Drawers>
@@ -17,7 +17,7 @@ export const App = () => {
 
 const X = ({ index }: { index: number }) => (
   <>
-    {index < 5 ? (
+    {index < 6 ? (
       <>
         {index > 0 && (
           <DrawerBackItem>
