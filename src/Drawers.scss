@@ -28,7 +28,7 @@ $horizontal-offset: 10% !default;
     }
     transition: transform $transition-duration;
     &.out {
-      transform: translateX(100%);
+      transform: translateX(100% + $horizontal-offset);
       display: none;
       &.next {
         display: block;
@@ -41,9 +41,6 @@ $horizontal-offset: 10% !default;
       transform: translateX(-$horizontal-offset);
       .in {
         transform: translateX($horizontal-offset);
-      }
-      .out {
-        transform: translateX(100% + $horizontal-offset);
       }
     }
   }
