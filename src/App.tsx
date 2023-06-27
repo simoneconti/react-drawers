@@ -21,26 +21,20 @@ const X = ({ index, parent }: { index: number; parent: string }) => (
       <>
         {index > 0 && (
           <DrawerBackItem>
-            <DrawerItem height={30} justifyContent="start" start={{ center: 'back' }} />
+            <DrawerItem height={30} justifyContent="start" start={{ center: '< back' }} />
           </DrawerBackItem>
         )}
-        <DrawerTriggerItem newDrawer={<X index={index + 1} parent={`${parent}1-`} />}>
-          <DrawerItem justifyContent="start" start={{ center: `${parent}1` }} />
-        </DrawerTriggerItem>
-        <DrawerTriggerItem newDrawer={<X index={index + 1} parent={`${parent}2-`} />}>
-          <DrawerItem justifyContent="start" start={{ center: `${parent}2` }} />
-        </DrawerTriggerItem>
-        <DrawerTriggerItem newDrawer={<X index={index + 1} parent={`${parent}3-`} />}>
-          <DrawerItem justifyContent="start" start={{ center: `${parent}3` }} />
-        </DrawerTriggerItem>
-        <DrawerTriggerItem newDrawer={<X index={index + 1} parent={`${parent}4-`} />}>
-          <DrawerItem justifyContent="start" start={{ center: `${parent}4` }} />
-        </DrawerTriggerItem>
+        {[...Array(4)].map((_i, row) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <DrawerTriggerItem key={row} newDrawer={<X index={index + 1} parent={`${parent}${row + 1}-`} />}>
+            <DrawerItem end={{ center: '>' }} justifyContent="space-between" start={{ center: `${parent}${row + 1}` }} />
+          </DrawerTriggerItem>
+        ))}
       </>
     ) : (
       <>
         <DrawerBackItem>
-          <DrawerItem height={30} justifyContent="start" start={{ center: 'back' }} />
+          <DrawerItem height={30} justifyContent="start" start={{ center: '< back' }} />
         </DrawerBackItem>
         <DrawerItem justifyContent="start" start={{ center: `${parent}1` }} />
       </>
