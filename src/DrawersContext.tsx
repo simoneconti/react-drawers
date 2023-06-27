@@ -24,7 +24,7 @@ export interface DrawersContextInterface {
 
 export const [DrawersContext, useDrawersContext] = createContext<DrawersContextInterface>('DrawersContext');
 
-export interface DrawersContextInterface2 {
+export interface DrawersStaticContextInterface {
   addActiveDrawerId(id: string): void;
   closeActiveDrawer(): void;
   drawerClassName?: string;
@@ -34,4 +34,4 @@ export interface DrawersContextInterface2 {
   removeDrawerId(id: string): void;
 }
 
-export const [DrawersContext2, useDrawersContext2] = createContext<DrawersContextInterface2>('DrawersContext2');
+export const [DrawersStaticContext, useDrawersStaticContext] = createContext<DrawersStaticContextInterface>('DrawersStaticContext');

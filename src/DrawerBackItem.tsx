@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { useDrawersContext2 } from './DrawersContext';
+import { useDrawersStaticContext } from './DrawersContext';
 
 export interface DrawerBackItemProps {
   children: React.ReactNode;
 }
 
 export const DrawerBackItem = ({ children }: DrawerBackItemProps) => {
-  const { closeActiveDrawer } = useDrawersContext2();
+  const { closeActiveDrawer } = useDrawersStaticContext();
 
   return (
     <>

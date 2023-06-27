@@ -4,7 +4,12 @@ import classnames from 'classnames';
 import React, { CSSProperties } from 'react';
 
 import { Drawer } from './Drawer';
-import { DrawersContext, DrawersContext2, DrawersContextInterface, DrawersContextInterface2 } from './DrawersContext';
+import {
+  DrawersContext,
+  DrawersContextInterface,
+  DrawersStaticContext,
+  DrawersStaticContextInterface,
+} from './DrawersContext';
 import { createUUID } from './util';
 
 export interface DrawersProps {
@@ -45,7 +50,7 @@ export const Drawers = ({
     [activeDrawersIds]
   );
 
-  const drawersContext2: DrawersContextInterface2 = React.useMemo<DrawersContextInterface2>(
+  const drawersContext2: DrawersStaticContextInterface = React.useMemo<DrawersStaticContextInterface>(
     () => ({
       addActiveDrawerId,
       closeActiveDrawer,
@@ -55,7 +60,15 @@ export const Drawers = ({
       drawerStyle,
       removeDrawerId,
     }),
-    [addActiveDrawerId, closeActiveDrawer, drawerClassName, drawerItemClassName, drawerItemStyle, drawerStyle, removeDrawerId]
+    [
+      addActiveDrawerId,
+      closeActiveDrawer,
+      drawerClassName,
+      drawerItemClassName,
+      drawerItemStyle,
+      drawerStyle,
+      removeDrawerId,
+    ]
   );
 
   const entryDrawerId = React.useMemo(() => createUUID(), []);
@@ -63,11 +76,11 @@ export const Drawers = ({
   return (
     <div className={classnames('react-drawers_drawers', className)}>
       <DrawersContext.Provider value={drawersContext}>
-        <DrawersContext2.Provider value={drawersContext2}>
+        <DrawersStaticContext.Provider value={drawersContext2}>
           <Drawer entryDrawer id={entryDrawerId}>
             {typeof children === 'function' ? children(drawersContext) : children}
           </Drawer>
-        </DrawersContext2.Provider>
+        </DrawersStaticContext.Provider>
       </DrawersContext.Provider>
     </div>
   );

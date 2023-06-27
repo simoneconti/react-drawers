@@ -17,7 +17,7 @@ export const App = () => {
 
 const X = ({ index, parent }: { index: number; parent: string }) => (
   <>
-    {index < 5 ? (
+    {index < 6 ? (
       <>
         {index > 0 && (
           <DrawerBackItem>

@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import React from 'react';
 
-import { useDrawersContext, useDrawersContext2 } from './DrawersContext';
+import { useDrawersContext, useDrawersStaticContext } from './DrawersContext';
 
 export interface DrawerProps {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ export interface DrawerProps {
 
 export const Drawer = ({ children, entryDrawer, id }: DrawerProps) => {
   const { activeDrawersIds } = useDrawersContext();
-  const { addActiveDrawerId, drawerClassName, drawerStyle, removeDrawerId } = useDrawersContext2();
+  const { addActiveDrawerId, drawerClassName, drawerStyle, removeDrawerId } = useDrawersStaticContext();
 
   const ref = React.useRef<HTMLDivElement>(null);
 
