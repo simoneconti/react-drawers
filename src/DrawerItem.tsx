@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 
-import { useDrawersContext } from './DrawersContext';
+import { useDrawersContext2 } from './DrawersContext';
 
 export interface DrawerItemProps {
   center?: {
@@ -24,7 +24,7 @@ export interface DrawerItemProps {
 }
 
 export const DrawerItem = ({ center, className, end, height, justifyContent, start }: DrawerItemProps) => {
-  const { drawerItemClassName, drawerItemStyle } = useDrawersContext();
+  const { drawerItemClassName, drawerItemStyle } = useDrawersContext2();
 
   return (
     <div

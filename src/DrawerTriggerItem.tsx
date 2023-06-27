@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Drawer } from './Drawer';
-import { useDrawersContext } from './DrawersContext';
+import { useDrawersContext2 } from './DrawersContext';
 import { createUUID } from './util';
 
 export interface DrawerTriggerItemProps {
@@ -12,7 +12,7 @@ export interface DrawerTriggerItemProps {
 export const DrawerTriggerItem = ({ children, newDrawer }: DrawerTriggerItemProps) => {
   const [id] = React.useState<string>(createUUID());
 
-  const { addActiveDrawerId } = useDrawersContext();
+  const { addActiveDrawerId } = useDrawersContext2();
 
   const handleClick = React.useCallback(() => {
     addActiveDrawerId(id);

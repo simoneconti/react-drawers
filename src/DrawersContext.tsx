@@ -20,6 +20,11 @@ const createContext = <T extends unknown | null>(displayName: string) => {
 
 export interface DrawersContextInterface {
   activeDrawersIds: Array<string>;
+}
+
+export const [DrawersContext, useDrawersContext] = createContext<DrawersContextInterface>('DrawersContext');
+
+export interface DrawersContextInterface2 {
   addActiveDrawerId(id: string): void;
   closeActiveDrawer(): void;
   drawerClassName?: string;
@@ -29,4 +34,4 @@ export interface DrawersContextInterface {
   removeDrawerId(id: string): void;
 }
 
-export const [DrawersContext, useDrawersContext] = createContext<DrawersContextInterface>('DrawersContext');
+export const [DrawersContext2, useDrawersContext2] = createContext<DrawersContextInterface2>('DrawersContext2');
