@@ -32,6 +32,7 @@ export interface DrawersStaticContextInterface {
   drawerItemStyle?: CSSProperties;
   drawerStyle?: CSSProperties;
   removeDrawerId(id: string): void;
+  transitionDuration: number;
 }
 
 export const [DrawersStaticContext, useDrawersStaticContext] = createContext<DrawersStaticContextInterface>('DrawersStaticContext');

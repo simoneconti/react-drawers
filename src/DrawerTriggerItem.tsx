@@ -7,16 +7,22 @@ import { createUUID } from './util';
 export interface DrawerTriggerItemProps {
   children: React.ReactNode;
   newDrawer: React.ReactElement;
+  onNewDrawerShown?(): void;
 }
 
-export const DrawerTriggerItem = ({ children, newDrawer }: DrawerTriggerItemProps) => {
+export const DrawerTriggerItem = ({ children, newDrawer, onNewDrawerShown }: DrawerTriggerItemProps) => {
   const [id] = React.useState<string>(createUUID());
 
-  const { addActiveDrawerId } = useDrawersStaticContext();
+  const { addActiveDrawerId, transitionDuration } = useDrawersStaticContext();
 
   const handleClick = React.useCallback(() => {
     addActiveDrawerId(id);
-  }, [addActiveDrawerId, id]);
+    if (onNewDrawerShown) {
+      setTimeout(() => {
+        onNewDrawerShown();
+      }, transitionDuration);
+    }
+  }, [addActiveDrawerId, id, onNewDrawerShown, transitionDuration]);
 
   return (
     <>

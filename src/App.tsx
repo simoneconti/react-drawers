@@ -25,8 +25,11 @@ const X = ({ index, parent }: { index: number; parent: string }) => (
           </DrawerBackItem>
         )}
         {[...Array(4)].map((_i, row) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <DrawerTriggerItem key={row} newDrawer={<X index={index + 1} parent={`${parent}${row + 1}-`} />}>
+          <DrawerTriggerItem
+            // eslint-disable-next-line react/no-array-index-key
+            key={row}
+            newDrawer={<X index={index + 1} parent={`${parent}${row + 1}-`} />}
+          >
             <DrawerItem
               end={{ center: '>' }}
               justifyContent="space-between"

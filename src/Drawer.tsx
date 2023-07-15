@@ -11,7 +11,8 @@ export interface DrawerProps {
 
 export const Drawer = ({ children, entryDrawer, id }: DrawerProps) => {
   const { activeDrawersIds } = useDrawersContext();
-  const { addActiveDrawerId, drawerClassName, drawerStyle, removeDrawerId } = useDrawersStaticContext();
+  const { addActiveDrawerId, drawerClassName, drawerStyle, removeDrawerId, transitionDuration } =
+    useDrawersStaticContext();
 
   const ref = React.useRef<HTMLDivElement>(null);
 
@@ -45,7 +46,7 @@ export const Drawer = ({ children, entryDrawer, id }: DrawerProps) => {
       )}
       id={`react-drawers_drawer-${id}`}
       ref={ref}
-      style={drawerStyle}
+      style={{ transition: `transform ${transitionDuration}ms`, ...drawerStyle }}
     >
       <div className="react-drawers_drawer-content">{children}</div>
     </div>

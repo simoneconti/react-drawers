@@ -19,6 +19,7 @@ export interface DrawersProps {
   drawerItemClassName?: string;
   drawerItemStyle?: CSSProperties;
   drawerStyle?: CSSProperties;
+  transitionDuration?: number;
 }
 
 export const Drawers = ({
@@ -28,6 +29,7 @@ export const Drawers = ({
   drawerItemClassName,
   drawerItemStyle,
   drawerStyle,
+  transitionDuration = 200,
 }: DrawersProps) => {
   const [activeDrawersIds, setActiveDrawersIds] = React.useState<Array<string>>([]);
 
@@ -59,6 +61,7 @@ export const Drawers = ({
       drawerItemStyle,
       drawerStyle,
       removeDrawerId,
+      transitionDuration,
     }),
     [
       addActiveDrawerId,
@@ -68,6 +71,7 @@ export const Drawers = ({
       drawerItemStyle,
       drawerStyle,
       removeDrawerId,
+      transitionDuration,
     ]
   );
 
