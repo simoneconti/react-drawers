@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { useDrawersStaticContext } from './DrawersContext';
 
 export interface DrawerItemProps {
+  as?: keyof JSX.IntrinsicElements;
   center?: {
     bottom?: string | React.ReactElement;
     center?: string | React.ReactElement;
@@ -24,11 +25,24 @@ export interface DrawerItemProps {
   };
 }
 
-export const DrawerItem = ({ center, children, className, end, height, justifyContent, start }: DrawerItemProps) => {
+export const DrawerItem = ({
+  as = 'div',
+  center,
+  children,
+  className,
+  end,
+  height,
+  justifyContent,
+  start,
+}: DrawerItemProps) => {
   const { drawerItemClassName, drawerItemStyle } = useDrawersStaticContext();
 
+  // const CustomTag = as as keyof JSX.IntrinsicElements;
+  // or to let TypeScript check if the tag is valid
+  const CustomTag: keyof JSX.IntrinsicElements = as;
+
   return (
-    <div
+    <CustomTag
       className={classnames('react-drawers_drawer-item', drawerItemClassName, className)}
       style={{
         justifyContent: justifyContent,
@@ -58,6 +72,6 @@ export const DrawerItem = ({ center, children, className, end, height, justifyCo
         </div>
       )}
       {children}
-    </div>
+    </CustomTag>
   );
 };
