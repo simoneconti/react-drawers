@@ -21,7 +21,7 @@ const X = ({ index, parent }: { index: number; parent: string }) => (
       <>
         {index > 0 && (
           <DrawerBackItem>
-            <DrawerItem as="a" height={30} justifyContent="start" start={{ center: '< back' }} />
+            <DrawerItem height={30} justifyContent="start" start={{ center: '< back' }} />
           </DrawerBackItem>
         )}
         {[...Array(4)].map((_i, row) => (
