@@ -8,6 +8,7 @@ export interface DrawerItemProps {
     center?: string | React.ReactElement;
     top?: string | React.ReactElement;
   };
+  children?: React.ReactNode;
   className?: string;
   end?: {
     bottom?: string | React.ReactElement;
@@ -23,15 +24,13 @@ export interface DrawerItemProps {
   };
 }
 
-export const DrawerItem = ({ center, className, end, height, justifyContent, start }: DrawerItemProps) => {
+export const DrawerItem = ({ center, children, className, end, height, justifyContent, start }: DrawerItemProps) => {
   const { drawerItemClassName, drawerItemStyle } = useDrawersStaticContext();
 
   return (
     <div
       className={classnames('react-drawers_drawer-item', drawerItemClassName, className)}
       style={{
-        // alignItems: 'center',
-        // display: 'flex',
         justifyContent: justifyContent,
         minHeight: height,
         ...drawerItemStyle,
@@ -58,6 +57,7 @@ export const DrawerItem = ({ center, className, end, height, justifyContent, sta
           {end.bottom && end.bottom}
         </div>
       )}
+      {children}
     </div>
   );
 };
